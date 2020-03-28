@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="(value, key, index) in user">
+            {{index + 1}}. {{key}} - {{value}}
+        </li>
+    </ul>
+</div>
+
+</body>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            user:{name:'峰哥', gender:'男', age: 18}
+        }
+    })
+</script>
+</html>

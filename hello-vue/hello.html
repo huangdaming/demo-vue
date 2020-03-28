@@ -1,0 +1,39 @@
+<body>
+<div id="app">
+    <input type="text" v-model="num"><button v-on:click="add">点我</button>
+    <h2>
+        {{name}}，非常帅！！！有{{num}}位女神为他着迷。
+    </h2>
+    v-text:<span v-text="hello"></span> <br/>
+    v-html:<span v-html="hello"></span>
+
+    <input type="checkbox" v-model="language" value="Java" />Java<br/>
+    <input type="checkbox" v-model="language" value="PHP" />PHP<br/>
+    <input type="checkbox" v-model="language" value="Swift" />Swift<br/>
+    <h1>
+        你选择了：{{language.join(',')}}
+    </h1>
+</div>
+</body>
+<script src="node_modules/vue/dist/vue.js" ></script>
+<script>
+    // 创建vue实例
+    var app = new Vue({
+        el: "#app", // el即element，该vue实例要渲染的页面元素
+        data: { // 渲染页面需要的数据
+            name: "峰哥",
+            num: 5,
+            hello: "<h1>大家好，我是峰哥</h1>",
+            language: []
+        },
+        methods: {
+            add: function(){
+                this.num--;
+            }
+        },
+        created: function () {
+            this.num = 100;
+        }
+    });
+
+</script>
